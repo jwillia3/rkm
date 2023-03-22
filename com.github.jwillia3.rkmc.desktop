@@ -1,7 +1,7 @@
 [Desktop Entry]
 
 Type=Application
-Name=Remote Keyboard & Mouse
+Name=Remote Keyboard & Mouse Client
 Comment=Control keyboard and mouse remotely
-Exec=rkm
+Exec=rkmc
 Categories=Utility;RemoteAccess;Network;System

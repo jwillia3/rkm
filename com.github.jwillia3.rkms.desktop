@@ -1,0 +1,7 @@
+[Desktop Entry]
+
+Type=Application
+Name=Remote Keyboard & Mouse Server
+Comment=Control keyboard and mouse remotely
+Exec=rkms
+Categories=Utility;RemoteAccess;Network;System

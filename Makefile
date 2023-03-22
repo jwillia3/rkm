@@ -1,16 +1,22 @@
-rkm: rkm.c
-	$(CC) -g -orkm rkm.c `pkg-config --cflags --libs x11 xtst`
+ALL: rkmc rkms
 
-test: rkm
-	./rkm
+rkmc: rkmc.c
+	$(CC) -g -orkmc rkmc.c `pkg-config --cflags --libs glfw3 gl` -lm
+
+rkms: rkms.c
+	$(CC) -g -orkms rkms.c `pkg-config --cflags --libs x11 xtst` -lm
 
 clean:
-	rm rkm
+	-rm rkmc rkms
 
-install: rkm
-	install rkm $(DESTDIR)/usr/local/bin/
-	xdg-desktop-menu install --novendor ./com.github.jwillia3.rkm.desktop
+install: rkmc rkms
+	install rkmc $(DESTDIR)/usr/local/bin/
+	install rkms $(DESTDIR)/usr/local/bin/
+	xdg-desktop-menu install --novendor ./com.github.jwillia3.rkmc.desktop
+	xdg-desktop-menu install --novendor ./com.github.jwillia3.rkms.desktop
 
-uninstall: rkm
-	-rm $(DESTDIR)/usr/local/bin/rkm
-	xdg-desktop-menu uninstall ./com.github.jwillia3.rkm.desktop
+uninstall: rkmc rkms
+	-rm $(DESTDIR)/usr/local/bin/rkmc
+	-rm $(DESTDIR)/usr/local/bin/rkms
+	xdg-desktop-menu uninstall ./com.github.jwillia3.rkmc.desktop
+	xdg-desktop-menu uninstall ./com.github.jwillia3.rkms.desktop
